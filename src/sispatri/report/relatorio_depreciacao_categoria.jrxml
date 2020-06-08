@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_locacao_usuario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f623dcb0-6571-4e8a-bfd4-d5392548ba22">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="subTitulo" class="java.lang.String"/>
+	<parameter name="cod_categoria" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.id as patrimonio_id,
+       p.descricao_curta as patrimonio_nome,
+       p.data_compra as data_compra,
+       p.valor_original as valor_original,
+       p.valor_atualizado as valor_atualizado,
+       dp.data_processamento as data_depreciacao,
+       (SELECT SUM(p2.valor_original) from patrimonio p2
+           left join depreciacao_processamento dp2 on dp2.id_patrimonio = p2.id) as valor_total_original,
+       (SELECT SUM(p2.valor_atualizado) from patrimonio p2
+           left join depreciacao_processamento dp2 on dp2.id_patrimonio = p2.id) as valor_total_depreciacao
+from patrimonio p
+inner join categoria c on p.id_categoria = c.id
+left join depreciacao_processamento dp on dp.id_patrimonio = p.id
+where c.id = $P{cod_categoria}]]>
+	</queryString>
+	<field name="patrimonio_id" class="java.lang.Integer"/>
+	<field name="patrimonio_nome" class="java.lang.String"/>
+	<field name="data_compra" class="java.sql.Date"/>
+	<field name="valor_original" class="java.lang.Double"/>
+	<field name="valor_atualizado" class="java.lang.Double"/>
+	<field name="data_depreciacao" class="java.sql.Date"/>
+	<field name="valor_total_original" class="java.lang.Double"/>
+	<field name="valor_total_depreciacao" class="java.lang.Double"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#0C5BA0" uuid="28ee8fec-b8fa-4dc8-8dec-726b96f2ae69"/>
+				<textField>
+					<reportElement x="304" y="43" width="271" height="20" forecolor="#FFFFFF" uuid="1ef0aa82-fddb-4ff2-9cc6-fc2c3ed63bcf"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{subTitulo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="20" y="0" width="284" height="92" forecolor="#FFFFFF" uuid="931996a6-858f-44cb-89e9-d009c8ddadca"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="40"/>
+					</textElement>
+					<text><![CDATA[SisPatri]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#CCCCCC" uuid="998e6915-44df-4f5c-986d-652fff44a7c0"/>
+				<staticText>
+					<reportElement x="0" y="0" width="53" height="20" uuid="f70c73a1-2f10-4df2-a085-0fa42ea41e71"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Código]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="179" y="0" width="76" height="20" uuid="30a51b02-891c-490a-a197-a1be9c0f24b6"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data compra]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="255" y="0" width="83" height="20" uuid="0a8e478e-82b5-4866-bfe8-4066520cef6f"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor original]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="53" y="0" width="126" height="20" uuid="749818ed-8a8c-49b0-8253-7dda76dc892c"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Patrimônio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="434" y="0" width="121" height="20" uuid="a2bb6f5c-08ab-45db-a511-097b16378243"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data depreciação]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="338" y="0" width="96" height="20" uuid="8115e6a9-6fe6-4019-86bd-f18f0c9f639f"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor atualizado]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="22">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="21" backcolor="#FFFFFF" uuid="6ff49dd5-bb80-4134-a9bb-a6e844cb528b"/>
+				<textField>
+					<reportElement x="0" y="0" width="53" height="20" uuid="56bdbbf0-bb53-424c-94df-ac26d97bf389"/>
+					<textElement textAlignment="Left">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{patrimonio_id}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00" isBlankWhenNull="false">
+					<reportElement x="255" y="0" width="83" height="20" uuid="23e2ca3f-5723-4572-bcf2-f9e4ae0eace2"/>
+					<textElement textAlignment="Right">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{valor_original}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="338" y="0" width="96" height="20" uuid="ab5b6d2b-ff65-4ce3-90fb-624c35a4a7ef"/>
+					<textElement textAlignment="Right">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{valor_atualizado}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="434" y="0" width="121" height="20" uuid="25c8fd1f-95d4-4e9f-9f1d-feb87020cc2f"/>
+					<textElement textAlignment="Center">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_depreciacao}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="53" y="0" width="126" height="20" uuid="68662d91-98ac-47c8-b86d-da86f05d2f1f"/>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{patrimonio_nome}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" forecolor="#666666" uuid="45c52ca5-3dc1-43c8-9114-dd07d2e579a2"/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="179" y="1" width="76" height="20" uuid="6b6f3b35-2b3e-450f-92e7-7597463aece2"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_compra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" backcolor="#CCCCCC" uuid="b251f2a0-6874-41e4-bdef-7af2664b3fbe"/>
+				<staticText>
+					<reportElement x="0" y="0" width="137" height="20" uuid="ede11fda-85be-4714-b7ca-7e45392f7906"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor total original: ]]></text>
+				</staticText>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="137" y="0" width="100" height="20" uuid="06f29446-da86-4f33-8fa5-0d08ddd458c0"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{valor_total_original}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="284" y="0" width="171" height="20" uuid="4b9d70f1-8e1d-4321-8656-6c694ad0a663"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor total depreciação: ]]></text>
+				</staticText>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="455" y="0" width="100" height="20" uuid="646cdb62-e08e-4b52-8319-8fd795c364d7"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{valor_total_depreciacao}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="62c8daa9-e455-4159-b81b-e89b097dd7f0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="328d3d66-fafb-4cb5-ad33-769629d47524"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd &apos;de&apos; MMMMM &apos;de&apos; yyyy HH:mm:ss z">
+				<reportElement x="0" y="4" width="215" height="13" uuid="4a601abf-7047-43cd-8cc8-89fb48aa99f4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

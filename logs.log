@@ -1,0 +1,159 @@
+2020-04-12 21:55:21 ERROR SqlExceptionHelper:146 - ERROR: relation "parametro" does not exist
+  Posição: 332
+2020-04-12 21:55:21 ERROR ParametroController:9 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-04-13 10:42:13 ERROR SqlExceptionHelper:146 - ERROR: null value in column "id" violates not-null constraint
+  Detalhe: Failing row contains (null, Alimentos, 20, A).
+2020-04-13 10:42:13 ERROR CategoriaController:9 - org.hibernate.exception.ConstraintViolationException: could not execute statement
+2020-04-13 10:42:15 ERROR SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2020-04-13 10:42:15 ERROR CategoriaController:9 - org.hibernate.exception.GenericJDBCException: could not extract ResultSet
+2020-04-13 11:01:20 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:36 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:37 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:37 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:37 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:41 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:01:46 ERROR CategoriaController:9 - java.lang.NullPointerException
+2020-04-13 11:04:54 ERROR CentroDeCustoController:9 - java.lang.ArrayIndexOutOfBoundsException: 3
+2020-04-27 10:56:56 ERROR PatrimonioController:14 - org.hibernate.hql.internal.ast.QuerySyntaxException: Patrimonio is not mapped [FROM Patrimonio]
+2020-04-27 11:02:44 ERROR PatrimonioController:14 - org.hibernate.hql.internal.ast.QuerySyntaxException: Patrimonio is not mapped [FROM Patrimonio]
+2020-04-27 17:51:01 ERROR ErrorCounter:78 - line 1:8: unexpected token: *
+2020-04-27 17:51:01 ERROR ErrorCounter:73 - line 1:8: unexpected token: *
+line 1:8: unexpected token: *
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1279)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1053)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:723)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:179)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:295)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:203)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1796)
+	at sispatri.repository.DepreciacaoProcessamentoRepository.getMaxDataDepreciacao(DepreciacaoProcessamentoRepository.java:37)
+	at sispatri.controller.DepreciacaoProcessamentoController.popularTabelaDepreciacao(DepreciacaoProcessamentoController.java:37)
+	at sispatri.view.frmDepreciacao.btnPesquisa1ActionPerformed(frmDepreciacao.java:316)
+	at sispatri.view.frmDepreciacao.access$100(frmDepreciacao.java:13)
+	at sispatri.view.frmDepreciacao$3.actionPerformed(frmDepreciacao.java:156)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2020-04-27 17:51:01 ERROR DepreciacaoProcessamentoController:14 - org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: * near line 1, column 8 [SELECT * FROM sispatri.model.DepreciacaoProcessamento WHERE id = 1 AND dataDepreciacao IN (SELECT MAX(dataDepreciacao) FROM DepreciacaoProcessamento)]
+2020-04-27 17:54:59 ERROR ErrorCounter:78 - line 1:11: expecting IDENT, found '*'
+2020-04-27 17:54:59 ERROR ErrorCounter:73 - line 1:11: expecting IDENT, found '*'
+line 1:11: expecting IDENT, found '*'
+	at antlr.Parser.match(Parser.java:211)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.identifier(HqlBaseParser.java:1496)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.atom(HqlBaseParser.java:3616)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3376)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3248)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2954)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:590)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2721)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2582)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2546)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2462)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2427)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2137)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.aliasedExpression(HqlBaseParser.java:2380)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectedPropertiesList(HqlBaseParser.java:1406)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1316)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1053)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:723)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316)
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:179)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:295)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:203)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1796)
+	at sispatri.repository.DepreciacaoProcessamentoRepository.getMaxDataDepreciacao(DepreciacaoProcessamentoRepository.java:37)
+	at sispatri.controller.DepreciacaoProcessamentoController.popularTabelaDepreciacao(DepreciacaoProcessamentoController.java:37)
+	at sispatri.view.frmDepreciacao.btnPesquisa1ActionPerformed(frmDepreciacao.java:316)
+	at sispatri.view.frmDepreciacao.access$100(frmDepreciacao.java:13)
+	at sispatri.view.frmDepreciacao$3.actionPerformed(frmDepreciacao.java:156)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2020-04-27 17:54:59 ERROR DepreciacaoProcessamentoController:14 - org.hibernate.hql.internal.ast.QuerySyntaxException: expecting IDENT, found '*' near line 1, column 11 [SELECT dp.* FROM sispatri.model.DepreciacaoProcessamento dp WHERE dp.id = 1 AND dp.dataDepreciacao IN (SELECT MAX(dp1.dataDepreciacao) FROM sispatri.model.DepreciacaoProcessamento dp1)]
+2020-04-27 17:55:41 ERROR SqlExceptionHelper:146 - ERROR: column depreciaca0_.data_depreciacao does not exist
+  Posição: 35
+2020-04-27 17:55:41 ERROR DepreciacaoProcessamentoController:14 - org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2020-05-17 23:26:36 ERROR DepreciacaoProcessamentoController:14 - java.lang.NullPointerException
+2020-05-17 23:28:01 ERROR DepreciacaoProcessamentoController:14 - java.lang.NullPointerException
+2020-05-17 23:29:02 ERROR DepreciacaoProcessamentoController:14 - java.lang.NullPointerException
+2020-05-17 23:31:13 ERROR DepreciacaoProcessamentoController:14 - java.lang.NullPointerException
+2020-05-17 23:31:47 ERROR DepreciacaoProcessamentoController:14 - java.lang.NullPointerException
